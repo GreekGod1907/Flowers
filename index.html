@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Un jardín mágico de flores luminosas para alguien especial">
     <meta name="author" content="Con desagrado ajjaja y amor">
@@ -1347,8 +1348,15 @@
             }
             
             // Mostrar mensaje
+            // Mostrar mensaje con SweetAlert2
             setTimeout(() => {
-                alert(randomMessage);
+                Swal.fire({
+                    title: 'Un Mensaje Para Ti.', // <-- ¡AQUÍ ESTÁ TU TÍTULO PERSONALIZADO!
+                    text: randomMessage,
+                    confirmButtonText: 'Aceptar',
+                    background: '#333', // Color de fondo oscuro
+                    color: '#fff' // Color del texto blanco
+                });
             }, 500);
         }
 
@@ -1374,6 +1382,7 @@
     </script>
 </body>
 </html>
+
 
 
 
