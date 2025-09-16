@@ -103,7 +103,7 @@
            =================================== */
         .love-button {
             position: fixed;
-            bottom: 50vh;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #d0b30ec3, #d39911);
@@ -214,9 +214,9 @@
            Contenedor de Flores
            =================================== */
         .flowers {
-  transform: scale(0.90);
-  margin-bottom: 1000vh; 
-}
+            position: relative;
+            transform: scale(0.9);
+        }
 
         /* ===================================
            Flores Principales
@@ -975,17 +975,6 @@
                 padding: 12px 28px;
                 font-size: 1rem;
             }
-            /* AÑADE ESTAS NUEVAS REGLAS */
-            .message-overlay {
-                top: 5%; /* Subimos el bloque de texto */
-                width: 90%; /* Evitamos que el texto toque los bordes */
-            }
-    
-            .love-button {
-                padding: 12px 28px;
-                font-size: 1rem;
-                bottom: 20px; /* Le damos un poco menos de espacio desde abajo */
-            }
         }
     </style>
 </head>
@@ -1388,9 +1377,4 @@
         };
     </script>
 </body>
-
 </html>
-
-
-
-
