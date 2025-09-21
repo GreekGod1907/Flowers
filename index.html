@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un jardín mágico de flores luminosas para alguien especial">
-    <meta name="author" content="Con desagrado ajjaja y amor">
+    <meta name="description" content="Un jardín nocturno especial para alguien único">
+    <meta name="author" content="Con cariño">
     
-    <title>Jardín de melodía</title>
+    <title>Midnight Garden</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌙</text></svg>">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -27,9 +27,15 @@
         }
 
         :root {
-            --dark-color: #000;
+            --dark-color: #0a0a0a;
             --font-main: 'Dancing Script', cursive;
             --font-secondary: 'Poppins', sans-serif;
+            /* Colores para flores rojas/púrpuras */
+            --flower-main: #b91c1c;
+            --flower-light: #ef4444;
+            --flower-gradient-start: #991b1b;
+            --flower-gradient-end: #dc2626;
+            --flower-glow: rgba(220, 38, 38, 0.8);
         }
 
         body {
@@ -37,7 +43,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: var(--dark-color);
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
             overflow: hidden;
             perspective: 1000px;
             font-family: var(--font-secondary);
@@ -59,12 +65,12 @@
 
         .main-message {
             font-family: var(--font-main);
-            color: #ffd700;
+            color: #ef4444;
             font-size: 2.5rem;
             font-weight: 700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
-                         0 0 60px rgba(255, 215, 0, 0.5),
-                         0 0 90px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 30px var(--flower-glow),
+                         0 0 60px rgba(220, 38, 38, 0.5),
+                         0 0 90px rgba(220, 38, 38, 0.3);
             margin-bottom: 15px;
             animation: glow 3s ease-in-out infinite alternate;
         }
@@ -89,12 +95,12 @@
 
         @keyframes glow {
             from { 
-                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 
-                             0 0 60px rgba(255, 215, 0, 0.5); 
+                text-shadow: 0 0 30px var(--flower-glow), 
+                             0 0 60px rgba(220, 38, 38, 0.5); 
             }
             to { 
-                text-shadow: 0 0 40px rgba(255, 215, 0, 1), 
-                             0 0 80px rgba(255, 215, 0, 0.8); 
+                text-shadow: 0 0 40px rgba(220, 38, 38, 1), 
+                             0 0 80px rgba(220, 38, 38, 0.8); 
             }
         }
 
@@ -106,8 +112,8 @@
             bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #d0b30ec3, #d39911);
-            color: #4b3a00;
+            background: linear-gradient(135deg, #991b1b, #dc2626);
+            color: #ffffff;
             border: none;
             padding: 15px 35px;
             font-size: 1.1rem;
@@ -115,7 +121,7 @@
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(253, 184, 19, 0.4);
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
             z-index: 1001;
             opacity: 0;
             animation: fadeIn 1s ease-out 5s forwards, pulse 2s infinite 5s;
@@ -140,19 +146,20 @@
            =================================== */
         .sparkle {
             position: fixed;
-            font-size: 24px; /* Tamaño del emoji */
-            color: #ffd700; /* Color dorado */
-            text-shadow: 0 0 10px #ffd700; /* Efecto de brillo */
+            font-size: 24px;
+            color: #ef4444;
+            text-shadow: 0 0 10px #ef4444;
             animation: floatUp 3s ease-out forwards;
             pointer-events: none;
             z-index: 999;
-            user-select: none; /* Para que no se pueda seleccionar el emoji */
+            user-select: none;
         }
+        
         .heart {
             position: fixed;
             width: 20px;
             height: 20px;
-            background: #ff6b6b;
+            background: #ef4444;
             transform: rotate(45deg);
             animation: floatUp 3s ease-out forwards;
             pointer-events: none;
@@ -165,7 +172,7 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            background: #ff6b6b;
+            background: #ef4444;
             border-radius: 50%;
         }
 
@@ -203,11 +210,11 @@
             filter: blur(0.1vmin);
             background-image: 
                 radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
-                radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)),
+                radial-gradient(ellipse at bottom, var(--dark-color), rgba(220, 38, 38, 0.1)),
                 repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
                 repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
                 repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
-                linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+                linear-gradient(90deg, rgb(139, 0, 0), rgb(40, 0, 0));
         }
 
         /* ===================================
@@ -216,12 +223,11 @@
         .flowers {
             position: relative;
             transform: scale(1.2);
-            bottom: -45vmin; /* <--- AJUSTA ESTE NÚMERO */
+            bottom: -45vmin;
             transform-origin: bottom center;
             z-index: 10;
             --fl-speed: 0.8s;
-
-            }
+        }
 
         /* ===================================
            Flores Principales
@@ -261,51 +267,42 @@
         }
 
         .flower--3 .flower__line {
-            height: 55 vmin;
+            height: 55vmin;
             animation-delay: 0.9s;
         }
-        /* ===================================
-        NUEVA FLOR 4
-        =================================== */
+
         .flower--4 {
-          /* Posición: la muevo más a la izquierda (-50% del centro) */
-          left: -50%; 
-          /* Rotación: un ángulo distinto para que se vea natural */
-          transform: rotate(10deg); 
-          /* Le asignamos su propia animación de movimiento */
-          animation: moving-flower-4 5s linear infinite; 
+            left: -50%; 
+            transform: rotate(10deg); 
+            animation: moving-flower-4 5s linear infinite; 
         }
 
         .flower--4 .flower__line {
-          height: 65vmin; /* Un poco más alta */
-          /* Retraso para que crezca después de las otras */
-          animation-delay: 1.2s; 
+            height: 65vmin;
+            animation-delay: 1.2s; 
         }
       
         .flower__leafs--4 {
-          /* Retraso para que florezca al final */
-          animation-delay: 2s;
+            animation-delay: 2s;
         }
       
-        /* Y creamos su animación de balanceo única */
         @keyframes moving-flower-4 {
-          0%, 100% {
-              transform: rotate(10deg);
-          }
-          50% {
-              transform: rotate(15deg);
-          }
+            0%, 100% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(15deg);
+            }
         }
         
-        /* ======== FLOR 5 ======== */
         .flower--5 {
-            left: -10%; /* Posicionada entre la flor central y la de la izquierda */
+            left: -10%;
             transform: rotate(-5deg);
             animation: moving-flower-5 6s linear infinite;
         }
 
         .flower--5 .flower__line {
-            height: 40vmin; /* Más bajita */
+            height: 40vmin;
             animation-delay: 1.4s;
         }
 
@@ -313,9 +310,8 @@
             animation-delay: 2.2s;
         }
 
-        /* ======== FLOR 6 ======== */
         .flower--6 {
-            left: 60%; /* Posicionada a la derecha */
+            left: 60%;
             transform: rotate(10deg);
             animation: moving-flower-6 5s linear infinite;
         }
@@ -374,7 +370,7 @@
             transform: translate(-50%, -100%);
             width: 8vmin;
             height: 8vmin;
-            background-color: #ffd700;
+            background-color: var(--flower-main);
             filter: blur(10vmin);
         }
 
@@ -385,11 +381,11 @@
             width: 8vmin;
             height: 11vmin;
             border-radius: 51% 49% 47% 53% / 44% 45% 55% 69%;
-            background-color: #ffffa0;
-            background-image: linear-gradient(to top, #ffc400, #ffffa0);
+            background-color: var(--flower-light);
+            background-image: linear-gradient(to top, var(--flower-gradient-start), var(--flower-gradient-end));
             transform-origin: bottom center;
             opacity: 0.9;
-            box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.2);
         }
 
         .flower__leaf--1 {
@@ -410,7 +406,7 @@
             transform-origin: bottom left;
             border-radius: 4vmin 10vmin 4vmin 4vmin;
             transform: translate(-0%, 18%) rotateX(70deg) rotate(-43deg);
-            background-image: linear-gradient(to top, #ffc400, #ffffa0);
+            background-image: linear-gradient(to top, var(--flower-gradient-start), var(--flower-gradient-end));
             z-index: 1;
             opacity: 0.8;
         }
@@ -423,7 +419,7 @@
             width: 9vmin;
             height: 4vmin;
             border-radius: 50%;
-            background-color: #fff;
+            background-color: #ffd4d4;
         }
 
         .flower__white-circle::after {
@@ -437,7 +433,7 @@
             border-radius: inherit;
             background-image: 
                 repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px),
-                linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
+                linear-gradient(90deg, rgb(255, 180, 180), rgb(255, 150, 150));
         }
 
         /* Luces de las flores */
@@ -446,14 +442,14 @@
             bottom: 0vmin;
             width: 1vmin;
             height: 1vmin;
-            background-color: rgb(255, 251, 0);
+            background-color: var(--flower-light);
             border-radius: 50%;
             filter: blur(0.2vmin);
             animation: light-ans 4s linear infinite backwards;
         }
 
         .flower__light:nth-child(odd) {
-            background-color: #ffc400;
+            background-color: var(--flower-main);
         }
 
         .flower__light--1 { left: -2vmin; animation-delay: 1s; }
@@ -471,7 +467,7 @@
             width: 1.5vmin;
             background-image: 
                 linear-gradient(to left, rgb(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
-                linear-gradient(to top, transparent 10%, #14757a, #ffffa0);
+                linear-gradient(to top, transparent 10%, #0a4a0f, #1a5f1a);
             box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
             animation: grow-flower-tree 4s backwards;
         }
@@ -487,7 +483,7 @@
             height: var(--h);
             border-top-right-radius: var(--h);
             border-bottom-left-radius: var(--h);
-            background-image: linear-gradient(to top, rgba(20, 117, 122, 0.4), #ffffa0);
+            background-image: linear-gradient(to top, rgba(20, 60, 20, 0.4), #2a7a2a);
         }
 
         .flower__line__leaf--1 {
@@ -541,7 +537,7 @@
            Hierba y vegetación
            =================================== */
         .flower__grass {
-            --c: #159faa;
+            --c: #0a4a0f;
             --line-w: 1.5vmin;
             position: absolute;
             bottom: 12vmin;
@@ -728,7 +724,7 @@
         .leaf {
             --w: 15vmin;
             --h: 40vmin;
-            --c: #1aaa15;
+            --c: #0a4a0f;
             position: absolute;
             bottom: 0;
             width: var(--w);
@@ -984,20 +980,22 @@
     </style>
 </head>
 <body class="not-loaded">
-    <audio id="background-music" src="Flores Amarillas.mp3" loop></audio>
+    <!-- Cambiamos el audio a la canción de Arctic Monkeys -->
+    <audio id="background-music" src="Do I Wanna Know.mp3" loop></audio>
+    
     <!-- Mensaje personalizable -->
     <div class="message-overlay">
-        <h1 class="main-message">Estas flores son para ti mi vida</h1>
-        <p class="sub-message">Cada pétalo lleva un pedacito de mi amor ❤️</p>
+        <h1 class="main-message">Do I wanna know?</h1>
+        <p class="sub-message">If this feeling flows both ways... 🌹</p>
     </div>
 
     <!-- Botón interactivo -->
-    <button class="love-button" onclick="showLove()">✨ Toca aquí ✨</button>
+    <button class="love-button" onclick="showLove()">🌙 Touch here 🌙</button>
 
     <!-- Fondo nocturno -->
     <div class="night"></div>
     
-    <!-- Jardín de flores del CodePen -->
+    <!-- Jardín de flores -->
     <div class="flowers">
         <!-- Flor 1 -->
         <div class="flower flower--1">
@@ -1273,33 +1271,35 @@
         // ===================================
         const CONFIG = {
             messages: {
-                main: "Flores amarillas",
-                subtitle: "Este gesto se inspira en la canción Flores Amarillas de Floricienta. Simboliza la alegría y el anhelo de un nuevo comienzo, coincidiendo con el inicio de la primavera en el sur.",
+                main: "Do I wanna know?. Arctic Monkeys",
+                subtitle: "Le diste un nuevo significado a esta canción... En la atención al detalle está la diferencia.",
                 loveMessages: [
-                    "Quería regalarte unas flores que no se marchitaran. Vuelve a entrar el 21 de septiembre",
+                    "Maybe I'm too busy being yours to fall for somebody new...",
+                    "Crawling back to you... Ever thought of calling when you've had a few?",
+                    "Sorta hoping that you'd stay...",
+                    "Are you mine?",
+                    "I dreamt about you nearly every night this week..."
                 ]
             }
         };
 
-
         // Esta es la nueva función que crea los destellos
-    function createSparkle(x, y) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle'; // Usamos la nueva clase CSS
-        sparkle.innerHTML = '✨';      // Ponemos el emoji dentro
-    
-        // Damos una variación aleatoria al tamaño y la posición
-        const randomSize = Math.random() * 20 + 15;
-        sparkle.style.fontSize = randomSize + 'px';
-        sparkle.style.left = x + (Math.random() - 0.5) * 30 + 'px';
-        sparkle.style.top = y + (Math.random() - 0.5) * 30 + 'px';
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '🌹';  // Cambiamos a rosa
+        
+            const randomSize = Math.random() * 20 + 15;
+            sparkle.style.fontSize = randomSize + 'px';
+            sparkle.style.left = x + (Math.random() - 0.5) * 30 + 'px';
+            sparkle.style.top = y + (Math.random() - 0.5) * 30 + 'px';
 
-        document.body.appendChild(sparkle);
-    
-        setTimeout(() => {
-            sparkle.remove();
-        }, 3000);
-    }
+            document.body.appendChild(sparkle);
+        
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
 
         // Función para crear corazones
         function createHeart(x, y) {
@@ -1316,23 +1316,16 @@
 
         // Función para mostrar mensaje de amor
         function showLove() {
-        // --- INICIO DE LA MODIFICACIÓN ---
+            const audio = document.getElementById('background-music');
 
-          // 1. Obtenemos el elemento de audio por su ID
-          const audio = document.getElementById('background-music');
-
-          // 2. Verificamos si la música está pausada para reproducirla.
-          //    Esto evita que la canción se reinicie si se hace clic varias veces.
-          if (audio.paused) {
-              audio.play();
-          }
-
-          // --- FIN DE LA MODIFICACIÓN ---
+            if (audio.paused) {
+                audio.play();
+            }
 
             const messages = CONFIG.messages.loveMessages;
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             
-            // Crear múltiples corazones
+            // Crear múltiples efectos
             for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                     const x = window.innerWidth / 2 + (Math.random() - 0.5) * 200;
@@ -1346,15 +1339,14 @@
                 navigator.vibrate([50, 50, 50]);
             }
             
-            // Mostrar mensaje
             // Mostrar mensaje con SweetAlert2
             setTimeout(() => {
                 Swal.fire({
-                    title: 'Un Mensaje Para Ti.', // <-- ¡AQUÍ ESTÁ TU TÍTULO PERSONALIZADO!
+                    title: 'Arctic Monkeys',
                     text: randomMessage,
-                    confirmButtonText: 'Aceptar',
-                    background: '#333', // Color de fondo oscuro
-                    color: '#fff' // Color del texto blanco
+                    confirmButtonText: 'Muestrame una captura de este mensaje en persona para recibir un premio.',
+                    background: '#1a1a1a',
+                    color: '#fff'
                 });
             }, 500);
         }
@@ -1381,26 +1373,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
